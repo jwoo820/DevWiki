@@ -88,3 +88,39 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+**/*.xcodeproj
+**/*.xcworkspace
+.byebug_history
+*.xcarchive
+tmp/
+/build/
+
+.env
+.idea/
+/Carthage/Checkouts
+*.profraw
+tuist.zip
+TODO
+TODO.md
+mkmf.log
+.rubocop-http---shopify-github-io-ruby-style-guide-rubocop-yml
+generated_fixtures
+.fixtures.generated.json
+**/Derived/
+Tuist.xcworkspace
+node_modules
+Fixture
+
+Tuist/Dependencies/SwiftPackageManager
+Tuist/Dependencies/graph.json
+
+# VSCode Settings
+.vscode/launch.json
+
+# Release artifacts
+.bundle
+
+# Tuist Cloud
+TuistCloud
+!make/tasks/cloud
