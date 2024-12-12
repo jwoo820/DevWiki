@@ -124,3 +124,8 @@ Tuist/Dependencies/graph.json
 # Tuist Cloud
 TuistCloud
 !make/tasks/cloud
+
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store

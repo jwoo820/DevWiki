@@ -13,8 +13,8 @@ let project = Project(
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
                 ]
             ),
-            sources: ["DevWiki/Sources/**"],
-            resources: ["DevWiki/Resources/**"],
+            sources: ["Sources/**"],
+            resources: ["Resources/**"],
             dependencies: []
         ),
         .target(
@@ -23,7 +23,7 @@ let project = Project(
             product: .unitTests,
             bundleId: "io.tuist.DevWikiTests",
             infoPlist: .default,
-            sources: ["DevWiki/Tests/**"],
+            sources: ["Tests/**"],
             resources: [],
             dependencies: [.target(name: "DevWiki")]
         ),
