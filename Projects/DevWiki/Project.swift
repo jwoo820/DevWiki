@@ -1,16 +1,26 @@
 import ProjectDescription
 
+private let appName = "DevWiki"
+private let bundleId = "io.tuist.DevWiki"
+private let appVersion: Plist.Value = "1.0.0"
+private let bundleVersion: Plist.Value = "1"
+private let deploymentTargets: DeploymentTargets = .iOS("16.0")
+
 let project = Project(
-    name: "DevWiki",
+    name: appName,
     targets: [
         .target(
-            name: "DevWiki",
-            destinations: .iOS,
+            name: appName,
+            destinations: [.iPhone],
             product: .app,
-            bundleId: "io.tuist.DevWiki",
+            bundleId: bundleId,
+            deploymentTargets: deploymentTargets,
             infoPlist: .extendingDefault(
                 with: [
+                    "CFBundleShortVersionString": appVersion,
+                    "CFBundleVersion": bundleVersion,
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
+                    "CFBundleDisplayName": "\(appName)", // 앱 이름,
                 ]
             ),
             sources: ["Sources/**"],
