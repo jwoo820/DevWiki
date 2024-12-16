@@ -7,6 +7,8 @@
 
 import ProjectDescription
 
+private let deploymentTargets: DeploymentTargets = .iOS("16.0")
+
 let project = Project(
     name: "DevWikiUI",
     targets: [
@@ -15,6 +17,7 @@ let project = Project(
             destinations: .iOS,
             product: .staticLibrary,
             bundleId: "io.tuist.DevWikiUI",
+            deploymentTargets: deploymentTargets,
             sources: "Sources/**",
             dependencies: []
         )
