@@ -7,8 +7,15 @@
 
 import SwiftUI
 
-struct RadioButton: View {
+public struct RadioButton: View {
 
+    public init(id: String, callback: @escaping (String) -> (), selectedID: String, subLabel: String? = nil) {
+        self.id = id
+        self.callback = callback
+        self.selectedID = selectedID
+        self.subLabel = subLabel
+    }
+    
     @Environment(\.colorScheme) var colorScheme
 
     let id: String
@@ -29,7 +36,7 @@ struct RadioButton: View {
         self.subLabel = subLabel
     }
     
-    var body: some View {
+    public var body: some View {
         Button {
             callback(self.id)
         } label: {
@@ -53,12 +60,18 @@ struct RadioButton: View {
     }
 }
 
-struct RadioButtonGroup: View {
+public struct RadioButtonGroup: View {
+    public init(items: [String], selectedId: Binding<String>, callback: @escaping (String) -> ()) {
+        self.items = items
+        self._selectedId = selectedId
+        self.callback = callback
+    }
+    
     let items: [String]
     @Binding var selectedId: String
     let callback: (String) -> ()
     
-    var body: some View {
+    public var body: some View {
         HStack(spacing: 0) {
             ForEach(items, id: \.self) { id in
                 RadioButton(id, selectedID: selectedId, callback: radioGroupCallback)

@@ -26,7 +26,8 @@ let project = Project(
             sources: ["Sources/**"],
             resources: ["Resources/**"],
             dependencies: [
-                .project(target: "DevWikiUI", path: "../DevWikiUI")
+                .project(target: "DevWikiUI", path: "../DevWikiUI"),
+                .project(target: "DevWikiCore", path: "../DevWikiCore")
             ]
         ),
         .target(
