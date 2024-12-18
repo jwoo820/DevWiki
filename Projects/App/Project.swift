@@ -1,7 +1,7 @@
 import ProjectDescription
 
-private let appName = "DevWiki"
-private let bundleId = "io.tuist.DevWiki"
+private let appName = "App"
+private let bundleId = "com.DevWiki.App"
 private let appVersion: Plist.Value = "1.0.0"
 private let bundleVersion: Plist.Value = "1"
 private let deploymentTargets: DeploymentTargets = .iOS("16.0")
@@ -20,25 +20,25 @@ let project = Project(
                     "CFBundleShortVersionString": appVersion,
                     "CFBundleVersion": bundleVersion,
                     "UILaunchStoryboardName": "LaunchScreen.storyboard",
-                    "CFBundleDisplayName": "\(appName)", // 앱 이름,
+                    "CFBundleDisplayName": "DevWiki", // 앱 이름,
                 ]
             ),
             sources: ["Sources/**"],
             resources: ["Resources/**"],
             dependencies: [
-                .project(target: "DevWikiUI", path: "../DevWikiUI"),
-                .project(target: "DevWikiCore", path: "../DevWikiCore")
+                .project(target: "Shared", path: "../Shared"),
+                .project(target: "Core", path: "../Core")
             ]
         ),
         .target(
             name: "DevWikiTests",
             destinations: .iOS,
             product: .unitTests,
-            bundleId: "io.tuist.DevWikiTests",
+            bundleId: "com.DevWiki.DevWikiTests",
             infoPlist: .default,
             sources: ["Tests/**"],
             resources: [],
-            dependencies: [.target(name: "DevWiki")]
+            dependencies: [.target(name: appName)]
         ),
     ]
 )

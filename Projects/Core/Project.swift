@@ -2,21 +2,23 @@
 //  Project.swift
 //  Config
 //
-//  Created by yuraMacBookPro on 12/12/24.
+//  Created by yuraMacBookPro on 12/16/24.
 //
 
 import ProjectDescription
 
 private let deploymentTargets: DeploymentTargets = .iOS("16.0")
 
+//let project = Project.featureFramework(name: "DevWikiCore", dependencies: [])
+
 let project = Project(
-    name: "DevWikiUI",
+    name: "Core",
     targets: [
         .target(
-            name: "DevWikiUI",
+            name: "Core",
             destinations: .iOS,
             product: .staticLibrary,
-            bundleId: "io.tuist.DevWikiUI",
+            bundleId: "com.DevWiki.Core",
             deploymentTargets: deploymentTargets,
             sources: "Sources/**",
             dependencies: []

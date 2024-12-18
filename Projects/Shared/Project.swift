@@ -2,7 +2,7 @@
 //  Project.swift
 //  Config
 //
-//  Created by yuraMacBookPro on 12/16/24.
+//  Created by yuraMacBookPro on 12/12/24.
 //
 
 import ProjectDescription
@@ -10,13 +10,13 @@ import ProjectDescription
 private let deploymentTargets: DeploymentTargets = .iOS("16.0")
 
 let project = Project(
-    name: "DevWikiCore",
+    name: "Shared",
     targets: [
         .target(
-            name: "DevWikiCore",
+            name: "Shared",
             destinations: .iOS,
             product: .staticLibrary,
-            bundleId: "io.tuist.DevWikiCore",
+            bundleId: "com.DevWiki.Shared",
             deploymentTargets: deploymentTargets,
             sources: "Sources/**",
             dependencies: []
